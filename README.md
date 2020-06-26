@@ -8,6 +8,8 @@ If you want to contribute your own databases of concepts to this repository, ope
 ## Structure
 
 ### Database version 17 (latest)
+Working example you can save and import [here](https://raw.githubusercontent.com/claudiu-bele/Copilot-public-data/master/neoplatonism_template.cdb)
+
 In this version all `.cdb` files are written in JSON, both backups and public files/libraries having the same structure.
 
 The file must be a JSON object, optionally containing arrays of objects named `users`, `nodes`, and `links`. The only mandatory field is `dbVersion`, the value of the database version as text,
