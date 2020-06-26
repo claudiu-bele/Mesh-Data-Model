@@ -1,0 +1,45 @@
+{
+  "links":[
+    {
+      "id":"neop_component_nous",
+      "nodeId":"id_nous",
+      "otherNodeId":"id_neoplatonism",
+      "type":"related",
+      "userId":"public"
+    },
+    {
+      "id":"neop_author",
+      "nodeId":"id_neoplatonism",
+      "otherNodeId":"id_plotinus",
+      "type":"related",
+      "userId":"public"
+    }
+  ],
+  "nodes":[
+    {
+      "id":"id_neoplatonism",
+      "name":"Neoplatonism",
+      "type":"item_system",
+      "userId":"public"
+    },
+    {
+      "description":"",
+      "id":"id_nous",
+      "name":"The nous",
+      "type":"item_concept",
+      "userId":"public"
+    },
+    {
+      "id":"id_plotinus",
+      "name":"Plotinus",
+      "description":
+"## Some description.
+
+Multiple lines? Be **bold**",
+      "type":"item_concept",
+      "userId":"public",
+      "imageUrl":"https://upload.wikimedia.org/wikipedia/commons/e/ee/Plotinos.jpg"
+    }
+  ],
+  "dbVersion":"17"
+}
