@@ -1,13 +1,13 @@
 # Copilot public data
 
-This place is for instructions on writing your own public `.cdb` files to share and import, as well as shared public files and templates.  
+This place is for instructions on writing your own public `.cdb` files to share and import, as well as shared public files and templates. Public files can be imported from version `1.3.1` onwards for users that have the Connections bundle (you can get it in-app).
 
 ## Contributing
-If you want to contribute your own databases of concepts to this repository, open a pull request and we'll look at it, we don't accept subjective interpretations though.
+If you want to contribute your own databases of concepts to this repository, open a pull request and we'll look at it.
 
 ## Structure
 
-### Latest - Db version 17
+### Database version 17 (latest)
 In this version all `.cdb` files are written in JSON, both backups and public files/libraries having the same structure.
 
 The file must be a JSON object, optionally containing arrays of objects named `users`, `nodes`, and `links`. The only mandatory field is `dbVersion`, the value of the database version as text,
