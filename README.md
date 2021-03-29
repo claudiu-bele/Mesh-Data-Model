@@ -14,14 +14,13 @@ Working example you can save and import [here](https://raw.githubusercontent.com
 
 In this version all `.cdb` files are written in JSON, both backups and public files/libraries having the same structure.
 
-The file must be a JSON object, optionally containing arrays of objects named `users`, `nodes`, and `links`. The only mandatory field is `dbVersion`, the value of the database version as text,
-in this case "21".
+The file must be a JSON object, optionally containing arrays of objects named `users`, `nodes`, `links`, `nodeTypes`, `linkTypes` and `linkTypeNodeReqs`. The only mandatory field is `dbVersion`, the value of the database version as text, in this case "21".
 
 Here's the available properties of each object
 
 ## Layer 0 (ground level)
 ### Users
-They are only relevant for backups, they do not represent authors. The Users array has no reason to not be empty or be there in public files.
+They are only relevant for backups. The Users array has no reason to not be empty in public files unless you want to author a bundle as coming from a specific source.
 ### Nodes
 They are in-app concepts. 
 - `id`: Text, the following are ids used by the system and are already included with the app
