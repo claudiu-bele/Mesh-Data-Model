@@ -1,8 +1,16 @@
-# Immaterial 2 & 3 public data
+# ImmaterialAI 3 public data
 
-This place is for instructions on writing your own public `.cdb` files to share and import, as well as shared public files and templates. Public files can be imported from version `1.3.1` onwards for users that have the Connections bundle (you can get it in-app).
+This concerns the user data structure for the [live](https://immaterialAI.com) IAI app.
 
-The `.cdb` files, although the standard for Immaterial 2, can also be used in Immaterial 3 without losing any data! 
+Current IAI versions:
+- 3.9.0
+   - Cross-Platform   
+   - Live on Web, Android, Desktop
+   - supports `.cdb`, `.idb`, `.txt`, `.json` and clipboard import/export
+- 2.4.6 Classic
+   - Native Android
+   - development halted, focused changed to 3.X Cross-Platform version
+   - supports `.cdb` files
 
 ## Contributing
 If you want to contribute your own databases of concepts to this repository, open a pull request and we'll look at it.
@@ -14,7 +22,7 @@ Working example you can save and import [here](https://raw.githubusercontent.com
 
 In this version all `.cdb` files are written in JSON, both backups and public files/libraries having the same structure.
 
-The file must be a JSON object, optionally containing arrays of objects named `users`, `nodes`, `links`, `nodeTypes`, `linkTypes` and `linkTypeNodeReqs`. The only mandatory field is `dbVersion`, the value of the database version as text, in this case "21".
+The file must be a JSON object, optionally containing arrays of objects for `users`, `nodes`, `links`, `nodeTypes`, `linkTypes` and `linkTypeNodeReqs`. The only mandatory field is `dbVersion`, the value of the database version as text, in this case "21".
 
 Here's the available properties of each object
 
@@ -34,6 +42,9 @@ They are in-app concepts.
     - `item_event` for events
     - `item_thought` for thoughts
     - `item_feeling` for feelings
+    - `item_quote` for quotes
+    - `item_study` for studies
+    - `item_source` for entities
     - `internal_system` for system
     - `internal_journey` for data tied to the user journey
 - `name`: Text, the name
@@ -53,15 +64,18 @@ In-app relations.
     - `proof` for proof/source/origin. Also uses description and data properties 
     - `parent` for parent
     - `trigger` for triggers/triggered by
-    - `analog` for analogous (not supported yet)
-    - `parallel` for parallels (not supported yet)
+    - `is` for hard equivalence
+    - `analog` for softer equivalence, potentially across mutually-exclusive systems
+    - `parallel` for parallels, apply your own semantic distinction factors
     - `related` for related
     - `favorite` for favorite/starred
     - `focus` for focus
+    - `old_me` for new/old me distinctions
+    - `todo` for task management
 - `nodeId`: Text matching `Node.id`, id of the node from which the relation starts
 - `userId`: Text matching `User.id`, for backups it will be the user's id, for public use "public"
 #### Optional
-- `otherNodeId` : Text matching `Node.id`, the id of the other node if applicable (e.g. focus and favorite have no otherNodeId)
+- `otherNodeId` : Text matching `Node.id`, the id of the other node if applicable (e.g. `focus`, `favorite`, `old_me`, `todo` have no otherNodeId)
 - `metaNodeId` : Text matching `Node.id`, the id of a meta node if applicable (used in analog and parallel)
 - `description` : Text, meta description. For proof relations, use "obj" for objects or "boolean" and data "true" if "No proof/Nothing" is selected 
 - `data` : Text, contextual data
