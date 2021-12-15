@@ -17,7 +17,7 @@ If you want to contribute your own databases of concepts to this repository, ope
 
 ## Structure
 
-### Database version 21 (latest)
+### Database version 26 (latest)
 Working example you can save and import [here](https://raw.githubusercontent.com/claudiu-bele/Copilot-public-data/master/neoplatonism_template.cdb)
 
 In this version all `.cdb` files are written in JSON, both backups and public files/libraries having the same structure.
