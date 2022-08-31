@@ -17,7 +17,7 @@ If you want to contribute your own databases of concepts to this repository, ope
 
 ## Structure
 
-### Database version 26 (latest)
+### Database version 30 (latest)
 Working example you can save and import [here](https://raw.githubusercontent.com/claudiu-bele/Copilot-public-data/master/neoplatonism_template.cdb)
 
 In this version all `.cdb` files are written in JSON, both backups and public files/libraries having the same structure.
@@ -48,8 +48,9 @@ They are in-app concepts.
     - `internal_system` for system
     - `internal_journey` for data tied to the user journey
 - `name`: Text, the name
-- `description`: Long-form text
 #### Optional
+- `description`: Long-form text
+- 'link' : Text, URL
 - `subTitle`: Text, subtitle
 - `description` : Text, can be markdown
 - `imageUrl` : Text, image Url
