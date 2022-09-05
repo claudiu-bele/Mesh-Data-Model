@@ -1,9 +1,9 @@
-# ImmaterialAI 3 public data
+# ImmaterialAI 4 public data
 
 This concerns the user data structure for the [live](https://immaterialAI.com) IAI app.
 
 Current IAI versions:
-- 3.28.x / 3.3+.x 
+- 4.0 / 3.28.x / 3.3+.x 
    - Cross-Platform   
    - Live on Web, Android, Windows (native & Steam)
    - supports `.cdb`, `.idb`, `.txt`, `.json` and clipboard import/export
