@@ -22,7 +22,7 @@ Working example you can save and import [here](https://raw.githubusercontent.com
 
 In this version all `.cdb` files are written in JSON, both backups and public files/libraries having the same structure.
 
-The file must be a JSON object, optionally containing arrays of objects for `users`, `nodes`, `links`, `nodeTypes`, `linkTypes` and `linkTypeNodeReqs`. The only mandatory field is `dbVersion`, the value of the database version as text, in this case "21".
+The file must be a JSON object, optionally containing arrays of objects for `users`, `nodes`, `links`, `nodeTypes`, `linkTypes` and `linkTypeNodeReqs`. The only mandatory field is `dbVersion`, the value of the database version as text, in this case "30".
 
 Here's the available properties of each object
 
