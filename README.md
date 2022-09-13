@@ -3,7 +3,7 @@
 This concerns the user data structure for the [live](https://immaterialAI.com) IAI app.
 
 Current IAI versions:
-- 4.0 / 3.28.x / 3.3+.x 
+- 4.2 / 3.28.x / 3.3+.x 
    - Cross-Platform   
    - Live on Web, Android, Windows (native & Steam)
    - supports `.cdb`, `.idb`, `.txt`, `.json` and clipboard import/export
@@ -22,7 +22,7 @@ Working example you can save and import [here](https://raw.githubusercontent.com
 
 In this version all `.cdb` files are written in JSON, both backups and public files/libraries having the same structure.
 
-The file must be a JSON object, optionally containing arrays of objects for `users`, `nodes`, `links`, `nodeTypes`, `linkTypes` and `linkTypeNodeReqs`. The only mandatory field is `dbVersion`, the value of the database version as text, in this case "30".
+The file must be a JSON object, optionally containing arrays of objects for `users`, `nodes`, `links`, `nodeTypes`, `linkTypes`, `preferences`, `worlds` and `linkTypeNodeReqs`. The only mandatory field is `dbVersion`, the value of the database version as text, in this case "30".
 
 Here's the available properties of each object
 
@@ -30,7 +30,7 @@ Here's the available properties of each object
 ### Users
 They are only relevant for backups. The Users array has no reason to not be empty in public files unless you want to author a bundle as coming from a specific source.
 ### Nodes
-They are in-app concepts. 
+Nodes are in-app concepts. 
 - `id`: Text, the following are ids used by the system and are already included with the app
     - `internal_nothing` for "nothing'
     - `internal_dont_know` for "don't know"
@@ -49,7 +49,6 @@ They are in-app concepts.
     - `internal_journey` for data tied to the user journey
 - `name`: Text, the name
 #### Optional
-- `description`: Long-form text
 - 'link' : Text, URL
 - `subTitle`: Text, subtitle
 - `description` : Text, can be markdown
@@ -57,6 +56,7 @@ They are in-app concepts.
 - `userId`: Text matching `User.id`. For backups it will be the user's id, for public use "public"
 - `created`: DateTime, can be string repr or int
 - `updated`: DateTime, can be string repr or int
+- `worldID`: Text matching `World.id`
 
 ### Links
 In-app relations.  
@@ -112,6 +112,18 @@ The types of which concepts/ideas can be made
 - `targetIconUrl` Text, icon url for the relation B -> A
 - `description` : Text, can be markdown 
 - `parentLinkTypeId`: Text matching `LinkType.id`. For backups it will be the user's id, for public use "public"
+- `userId`: Text matching `User.id`. For backups it will be the user's id, for public use "public"
+- `created`: DateTime, can be string repr or int
+- `updated`: DateTime, can be string repr or int
+
+### Worlds
+Worlds are a way to split your library into distinct semantic worlds. 
+- `id`: Text
+- `name`: Text, the name
+#### Optional
+- `subTitle`: Text, subtitle
+- `description` : Text, can be markdown
+- `imageUrl` : Text, icon actually
 - `userId`: Text matching `User.id`. For backups it will be the user's id, for public use "public"
 - `created`: DateTime, can be string repr or int
 - `updated`: DateTime, can be string repr or int
