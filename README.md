@@ -3,21 +3,25 @@
 This concerns the user data structure for the [live](https://immaterialAI.com) IAI app.
 
 Current IAI versions:
-- 4.2 / 3.28.x / 3.3+.x 
-   - Cross-Platform   
-   - Live on Web, Android, Windows (native & Steam)
+- 4.7.1
+   - free with optional upgrade
+   - cross-Platform   
+   - live on Web, Android, Windows (native & Steam)
    - supports `.cdb`, `.idb`, `.txt`, `.json` and clipboard import/export
 - 2.4.6 Classic
-   - Native Android
+   - discontinued
+   - native Android
    - development halted, focused changed to 3.X Cross-Platform version
    - supports `.cdb` files
+   
+*Some database tables and properties are available only beyond certain versions, what came after IAI Classic will be annotated accordingly*
 
 ## Contributing
 If you want to contribute your own databases of concepts to this repository, open a pull request and we'll look at it.
 
-## Structure
+# Database 
 
-### Database version 30 (latest)
+##### Database version 32 (latest)
 Working example you can save and import [here](https://raw.githubusercontent.com/claudiu-bele/Copilot-public-data/master/neoplatonism_template.cdb)
 
 In this version all `.cdb` files are written in JSON, both backups and public files/libraries having the same structure.
@@ -53,10 +57,11 @@ Nodes are in-app concepts.
 - `subTitle`: Text, subtitle
 - `description` : Text, can be markdown
 - `imageUrl` : Text, image Url
+- `link (since 3.28.1/3.3.1+)` : Text, link that can be easily accessed
 - `userId`: Text matching `User.id`. For backups it will be the user's id, for public use "public"
 - `created`: DateTime, can be string repr or int
 - `updated`: DateTime, can be string repr or int
-- `worldID`: Text matching `World.id`
+- `worldID (since 4.1)`: Text matching `World.id`
 
 ### Links
 In-app relations.  
@@ -90,7 +95,7 @@ The types of which concepts/ideas can be made
 - `name`: Text, the name
 - `description`: Long-form text
 - `colorString`: Text, Color as a string (currently accepts ints)
-#### Optional
+##### Optional
 - `iconUrl` Text, icon url
 - `description` : Text, can be markdown 
 - `parentNodeTypeId`: Text matching `NodeType.id`. For backups it will be the user's id, for public use "public"
@@ -106,7 +111,7 @@ The types of which concepts/ideas can be made
 - `colorString`: Text, Color as a string (currently accepts ints)
 - `manyToMany`: Text, Type of relation to enable 1:1, 1:M, M:M
 - `sourceIsTarget`: Boolean
-#### Optional
+##### Optional
 - `targetText`: Text on the other side of the relation i.e. from B -> A what is "->"
 - `sourceIconUrl` Text, icon url for the relation A -> B
 - `targetIconUrl` Text, icon url for the relation B -> A
@@ -116,11 +121,11 @@ The types of which concepts/ideas can be made
 - `created`: DateTime, can be string repr or int
 - `updated`: DateTime, can be string repr or int
 
-### Worlds
+### Worlds (since 4.1)
 Worlds are a way to split your library into distinct semantic worlds. 
 - `id`: Text
 - `name`: Text, the name
-#### Optional
+##### Optional
 - `subTitle`: Text, subtitle
 - `description` : Text, can be markdown
 - `imageUrl` : Text, icon actually
@@ -144,7 +149,16 @@ In the app, certain relations enforce rules as to what the type of the concepts 
 Like `effect_parent`, which shows up in certain concepts as "Parent effect", and effects are the only type of item you can choose there. With that said,
 those rules are not enforced when importing data, so you can write relations here that would be impossible in the app.
 
-#### Version 21 Example (node and link types already bundled with the app omitted)
+## Database schema changes
+IAI 3 released with database version 30, featuring the structure of ImmaterialAI Classic, here's a changelog of versions since version 30
+#### Db version 31 (IAI 3.28.1/ 3.3.1+)
+- nullable property 'link' added to nodes
+#### Db version 32 (IAI 4.1)
+- added Worlds table
+- nullable property 'worldId' added to nodes, points to a node
+
+
+## Version 32 Example (node and link types already bundled with the app omitted)
 ```
 {
   "links":[
