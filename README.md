@@ -1,15 +1,22 @@
-# ImmaterialAI 4 public data
+# Mesh 1.0 data model
 
-This concerns the user data structure for the [live](https://immaterialAI.com) IAI app.
+This concerns the user data structure for the underlying logic system of the [live](https://immaterialAI.com) IAI app - Mesh.
 
-Current IAI versions:
-- 4.7.1
+## Mesh implementations
+
+### Clarity
+   - coming soon
+
+### ImmaterialAI
+   - live
    - free with optional upgrade
    - cross-Platform   
    - live on Web, Android, Windows (native & Steam)
    - supports `.cdb`, `.idb`, `.txt`, `.json` and clipboard import/export
-- 2.4.6 Classic
+   
+### ImmaterialAI Classic
    - discontinued
+   - free with optional upgrade
    - native Android
    - development halted, focused changed to 3.X Cross-Platform version
    - supports `.cdb` files
@@ -21,7 +28,7 @@ If you want to contribute your own databases of concepts to this repository, ope
 
 # Database 
 
-##### Database version 32 (latest)
+##### Database version 35 (latest)
 Working example you can save and import [here](https://raw.githubusercontent.com/claudiu-bele/Copilot-public-data/master/neoplatonism_template.cdb)
 
 In this version all `.cdb` files are written in JSON, both backups and public files/libraries having the same structure.
@@ -98,7 +105,7 @@ The types of which concepts/ideas can be made
 ##### Optional
 - `iconUrl` Text, icon url
 - `description` : Text, can be markdown 
-- `parentNodeTypeId`: Text matching `NodeType.id`. For backups it will be the user's id, for public use "public"
+- `parentId`: Text matching `NodeType.id`. For backups it will be the user's id, for public use "public"
 - `userId`: Text matching `User.id`. For backups it will be the user's id, for public use "public"
 - `created`: DateTime, can be string repr or int
 - `updated`: DateTime, can be string repr or int
@@ -121,7 +128,7 @@ The types of which concepts/ideas can be made
 - `created`: DateTime, can be string repr or int
 - `updated`: DateTime, can be string repr or int
 
-### Worlds (since 4.1)
+### Worlds (since IAI 4.1)
 Worlds are a way to split your library into distinct semantic worlds. 
 - `id`: Text
 - `name`: Text, the name
@@ -143,6 +150,18 @@ Constraints on what node type can be on either side of a Link Type link
 - `linkTypePosition`: Text, position in which the `nodeTypeId` is added as a constraint. Can be "source", "target" or "source_target".
 - `userId`: Text matching `User.id`. For backups it will be the user's id, for public use "public"
 - `created`: DateTime, can be string repr or int
+- `updated`: DateTime, can be string repr or int
+
+### World Constraints (since Mesh 1.0)
+World constraints help further narrow down your IAI experience by only showing meta data choices based on your selected worlds' constraints. 
+- `id`: Text
+- `worldId`: Text matching `World.id` meaning the world to which we apply the constraint
+- `type`: Text, constraint type, can be 'allow' or 'exclude'
+- `metaDataType`: Text, the data type to enforce the constraint on, can be 'nodeType' or 'linkType'
+- `metaDataId`: Text matching `NodeType.id` or `LinkType.id` based on `metaDataType` to represent the node/link type
+- `created`: DateTime, can be string repr or int
+##### Optional
+- `userId`: Text matching `User.id`. For backups it will be the user's id, for public use "public"
 - `updated`: DateTime, can be string repr or int
 
 In the app, certain relations enforce rules as to what the type of the concepts they are connected to can be. 
