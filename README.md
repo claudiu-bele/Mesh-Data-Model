@@ -21,8 +21,6 @@ This concerns the user data structure for the underlying logic system of the [li
    - development halted, focused changed to 3.X Cross-Platform version
    - supports `.cdb` files
    
-*Some database tables and properties are available only beyond certain versions, what came after IAI Classic will be annotated accordingly*
-
 ## Contributing
 If you want to contribute your own databases of concepts to this repository, open a pull request and we'll look at it.
 
