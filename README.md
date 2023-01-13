@@ -95,6 +95,26 @@ In-app relations.
 - `created`: DateTime, can be string repr or int
 - `updated`: DateTime, can be string repr or int
 
+
+### Tag references (since Mesh 1.0)
+Tag references are references to tags from any data type, supports worlds 
+- `id`: Text, the following are ids used by the system and are already included with the app
+- `tagId`: Text matching `Tag.id` for the tag we want to reference
+- `name`: Text, the name
+- `colorString`: Text, Color as a string (currently accepts ints)
+- `iconUrl` : Text, icon Url
+#### Optional
+- `description` : Text, can be markdown
+- `userId`: Text matching `User.id`. For backups it will be the user's id, for public use "public"
+- `created`: DateTime, can be string repr or int
+- `updated`: DateTime, can be string repr or int
+- `nodeId`: Text matching `Node.id` if we want to tie the tag to a node
+- `linkId`: Text matching `Link.id` if we want to tie the tag to a link
+- `nodeTypeId`: Text matching `NodeType.id` if we want to tie the tag to a node type
+- `linkTypeId`: Text matching `LinkType.id` if we want to tie the tag to a link type
+- `worldId`: Text matching `World.id` if we want to tie the tag to a world
+
+
 ## Layer -1 (architecture)
 ### Node types
 The types of which concepts/ideas can be made
@@ -105,7 +125,7 @@ The types of which concepts/ideas can be made
 ##### Optional
 - `iconUrl` Text, icon url
 - `description` : Text, can be markdown 
-- `parentId`: Text matching `NodeType.id`. For backups it will be the user's id, for public use "public"
+- (since Mesh 1.0) `parentId`: Text matching `NodeType.id`. For backups it will be the user's id, for public use "public"
 - `userId`: Text matching `User.id`. For backups it will be the user's id, for public use "public"
 - `created`: DateTime, can be string repr or int
 - `updated`: DateTime, can be string repr or int
@@ -136,6 +156,18 @@ Worlds are a way to split your library into distinct semantic worlds.
 - `subTitle`: Text, subtitle
 - `description` : Text, can be markdown
 - `imageUrl` : Text, icon actually
+- `userId`: Text matching `User.id`. For backups it will be the user's id, for public use "public"
+- `created`: DateTime, can be string repr or int
+- `updated`: DateTime, can be string repr or int
+
+### Tags (since Mesh 1.0) 
+Tags are tags, not a reference to tags on individual data but the tags that are referenced themselves 
+- `id`: Text, the following are ids used by the system and are already included with the app
+- `name`: Text, the name
+- `colorString`: Text, Color as a string (currently accepts ints)
+- `iconUrl` : Text, icon Url
+#### Optional
+- `description` : Text, can be markdown
 - `userId`: Text matching `User.id`. For backups it will be the user's id, for public use "public"
 - `created`: DateTime, can be string repr or int
 - `updated`: DateTime, can be string repr or int
