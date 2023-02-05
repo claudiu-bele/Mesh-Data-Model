@@ -7,7 +7,7 @@ This concerns the user data structure for the underlying logic system of the [li
 - coming soon
 ### Mesh 1.0
 - Node types get parentId, WorldConstraints table, Tags 
-- + backup support for all new changes
+- +backup support for all new changes
 ### ImmaterialAI 1.X - 4.9 data model
 - Contains users nodes, links (+ types), worlds and preferences, 
 
