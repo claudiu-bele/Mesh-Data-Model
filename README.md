@@ -1,6 +1,8 @@
-# Mesh 1.0 data model
+# Mesh SDK data model
 
-This concerns the user data structure for the underlying logic system of the [live](https://immaterialAI.com) IAI app - Mesh.
+[Mesh 1.0 announcement post](https://store.steampowered.com/news/app/1858060/view/3668778353635769023)
+
+This concerns the user data structure of Mesh, the underlying logic system of the [live](https://immaterialAI.com) ImmaterialAI app.
 
 ## Condensed update log
 ### Mesh 1.1
