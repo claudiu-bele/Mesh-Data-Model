@@ -2,6 +2,15 @@
 
 This concerns the user data structure for the underlying logic system of the [live](https://immaterialAI.com) IAI app - Mesh.
 
+## Condensed update log
+### Mesh 1.1
+- coming soon
+### Mesh 1.0
+- Node types get parentId, WorldConstraints table, Tags 
+- + backup support for all new changes
+### ImmaterialAI 1.X - 4.9 data model
+- Contains users nodes, links (+ types), worlds and preferences, 
+
 ## Mesh implementations
 
 ### Clarity
