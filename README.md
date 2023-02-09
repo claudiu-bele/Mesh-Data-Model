@@ -7,10 +7,13 @@ This concerns the user data structure of Mesh, the underlying logic system of th
 ## Condensed update log
 ### Mesh 1.1
 - coming soon
+- database version 38
 ### Mesh 1.0
+- database version 35
 - Node types get parentId, WorldConstraints table, Tags 
 - +backup support for all new changes
 ### ImmaterialAI 1.X - 4.9 data model
+- database version 1 - 32
 - Contains users nodes, links (+ types), worlds and preferences, 
 
 ## Mesh implementations
@@ -23,7 +26,7 @@ This concerns the user data structure of Mesh, the underlying logic system of th
    - free with optional upgrade
    - cross-Platform   
    - live on Web, Android, Windows (native & Steam)
-   - supports `.cdb`, `.idb`, `.txt`, `.json` and clipboard import/export
+   - supports `.mesh`, `.idb`, `.cdb`, `.txt`, `.json` and clipboard import/export
    
 ### ImmaterialAI Classic
    - discontinued
@@ -37,12 +40,17 @@ If you want to contribute your own databases of concepts to this repository, ope
 
 # Database 
 
-##### Database version 35 (latest)
+##### Database version 38 (latest)
 Working example you can save and import [here](https://raw.githubusercontent.com/claudiu-bele/Copilot-public-data/master/neoplatonism_template.cdb)
 
-In this version all `.cdb` files are written in JSON, both backups and public files/libraries having the same structure.
+In this version all `.mesh` files are written in JSON, both backups and public files/libraries having the same structure.
 
-The file must be a JSON object, optionally containing arrays of objects for `users`, `nodes`, `links`, `nodeTypes`, `linkTypes`, `preferences`, `worlds` and `linkTypeNodeReqs`. The only mandatory field is `dbVersion`, the value of the database version as text, in this case "30".
+The file must be a JSON object, optionally containing arrays of objects
+- from IAI 3 - 4.9: `users`, `nodes`, `links`, `nodeTypes`, `linkTypes`, `preferences`, `worlds`, `linkTypeNodeReqs`, `worlds`, `worldConstraints`, 
+- from Mesh 1.0 `tags`, `tagInstances`
+- from Mesh 1.1 `dataInfos` 
+
+The only mandatory field is `dbVersion`, the value of the database version as text, in this case "38".
 
 Here's the available properties of each object
 
