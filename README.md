@@ -6,30 +6,29 @@ This concerns the user data structure of Mesh, the underlying logic system of th
 
 # Table of contents
 - [Updates](#condensed-update-log)
-- [Mesh 1.2](#mesh-12)
-- [Mesh 1.1](#mesh-11)
-- [Mesh 1.0](#mesh-10)
-- [Pre-Mesh](#ImmaterialAI-data-model)
+  - [Mesh 1.2](#mesh-12)
+  - [Mesh 1.1](#mesh-11)
+  - [Mesh 1.0](#mesh-10)
+  - [Pre-Mesh](#ImmaterialAI-data-model)
 - [Mesh implementations](#mesh-implementations)
-- [Clarity](#clarity)
-- [ImmaterialAI](#ImmaterialAI)
-- [ImmaterialAI classic](#ImmaterialAI-classic)
+  - [Clarity](#clarity)
+  - [ImmaterialAI](#ImmaterialAI)
+  - [ImmaterialAI classic](#ImmaterialAI-classic)
 - [Contributing](#contributing)
 - [Database](#database)
-- [Data level](#layer-0-ground-level)
-- [Node](#node)
-- [Link](#link)
-- [Tag reference](#tagreference-since-mesh-10)
-- [Data info](#datainfo-since-mesh-12)
-
-- [Meta data level](#layer--1-architecture)
-- [NodeType](#nodetype)
-- [LinkType](#linkType)
-- [World](#world-sine-iai-41)
-- [Tag](#tag-sine-mesh-10)
-- [Constraints level](#level--2-constraints)
-- [LinkRequiredNodeType](#LinkRequiredNodeType)
-- [WorldConstraint](#WorldConstraint-since-mesh-10)
+  - [Data level](#layer-0-ground-level)
+    - [Node](#node)
+    - [Link](#link)
+    - [Tag reference](#tagreference-since-mesh-10)
+    - [Data info](#datainfo-since-mesh-12)
+  - [Meta data level](#layer--1-architecture)
+    - [NodeType](#nodetype)
+    - [LinkType](#linkType)
+    - [World](#world-sine-iai-41)
+    - [Tag](#tag-sine-mesh-10)
+  - [Constraints level](#level--2-constraints)
+    - [LinkRequiredNodeType](#LinkRequiredNodeType)
+    - [WorldConstraint](#WorldConstraint-since-mesh-10)
 
 
 ## Condensed update log
@@ -99,17 +98,17 @@ Nodes are in-app concepts.
 - `internal_dont_know` for "don't know"
 - `internal_everything` for "everything"
 - `type`: Text matching `NodeType.id`, represents the type of concept. Below are already included with the app
-- `item_concept` for ideas
-- `item_system` for world views
-- `item_effect` for effects
-- `item_event` for events
-- `item_thought` for thoughts
-- `item_feeling` for feelings
-- `item_quote` for quotes
-- `item_study` for studies
-- `item_source` for entities
-- `internal_system` for system
-- `internal_journey` for data tied to the user journey
+  - `item_concept` for ideas
+  - `item_system` for world views
+  - `item_effect` for effects
+  - `item_event` for events
+  - `item_thought` for thoughts
+  - `item_feeling` for feelings
+  - `item_quote` for quotes
+  - `item_study` for studies
+  - `item_source` for entities
+  - `internal_system` for system
+  - `internal_journey` for data tied to the user journey
 - `name`: Text, the name
 #### Optional
 - 'link' : Text, URL
@@ -129,17 +128,17 @@ Nodes are in-app concepts.
 In-app relations.
 - `id`: Text
 - `type`: Text matching `LinkType.id`, type of relation. Below are already included with the app
-- `proof` for proof/source/origin. Also uses description and data properties
-- `parent` for parent
-- `trigger` for triggers/triggered by
-- `is` for hard equivalence
-- `analog` for softer equivalence, potentially across mutually-exclusive systems
-- `parallel` for parallels, apply your own semantic distinction factors
-- `related` for related
-- `favorite` for favorite/starred
-- `focus` for focus
-- `old_me` for new/old me distinctions
-- `todo` for task management
+  - `proof` for proof/source/origin. Also uses description and data properties
+  - `parent` for parent
+  - `trigger` for triggers/triggered by
+  - `is` for hard equivalence
+  - `analog` for softer equivalence, potentially across mutually-exclusive systems
+  - `parallel` for parallels, apply your own semantic distinction factors
+  - `related` for related
+  - `favorite` for favorite/starred
+  - `focus` for focus
+  - `old_me` for new/old me distinctions
+  - `todo` for task management
 - `nodeId`: Text matching `Node.id`, id of the node from which the relation starts
 - `userId`: Text matching `User.id`, for backups it will be the user's id, for public use "public"
 #### Optional
