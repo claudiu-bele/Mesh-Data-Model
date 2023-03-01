@@ -4,13 +4,20 @@
 
 This concerns the user data structure of Mesh, the underlying logic system of the [live](https://immaterialAI.com) ImmaterialAI app.
 
+# Table of contents
+1. [update log](#condensed_update_log)
+2. [Mesh implementations(#mesh_implementations)
+3. [Contributing](#contributing)
+4. 
+
+
 ## Condensed update log
 ### Mesh 1.1
 - coming soon
 - database version 38
 ### Mesh 1.0
 - database version 35
-- Node types get parentId, WorldConstraints table, Tags 
+- Node types get parentId, WorldConstraints table, Tag, TagReference
 - +backup support for all new changes
 ### ImmaterialAI 1.X - 4.9 data model
 - database version 1 - 32
@@ -40,10 +47,10 @@ If you want to contribute your own databases of concepts to this repository, ope
 
 # Database 
 
-##### Database version 38 (latest)
-Working example you can save and import [here](https://raw.githubusercontent.com/claudiu-bele/Copilot-public-data/master/neoplatonism_template.cdb)
+##### latest
+*latest version is 43*
 
-In this version all `.mesh` files are written in JSON, both backups and public files/libraries having the same structure.
+In this version [here](https://raw.githubusercontent.com/claudiu-bele/Mesh-Data-Model/master/neoplatonism_template.cdb) all `.mesh` data are written in JSON, both backups and public files/libraries having the same structure.
 
 The file must be a JSON object, optionally containing arrays of objects
 - from IAI 3 - 4.9: `users`, `nodes`, `links`, `nodeTypes`, `linkTypes`, `preferences`, `worlds`, `linkTypeNodeReqs`, `worlds`, `worldConstraints`, 
@@ -55,9 +62,9 @@ The only mandatory field is `dbVersion`, the value of the database version as te
 Here's the available properties of each object
 
 ## Layer 0 (ground level)
-### Users
+### User
 They are only relevant for backups. The Users array has no reason to not be empty in public files unless you want to author a bundle as coming from a specific source.
-### Nodes
+### Node
 Nodes are in-app concepts. 
 - `id`: Text, the following are ids used by the system and are already included with the app
     - `internal_nothing` for "nothing'
@@ -87,7 +94,7 @@ Nodes are in-app concepts.
 - `updated`: DateTime, can be string repr or int
 - `worldID (since 4.1)`: Text matching `World.id`
 
-### Links
+### Link
 In-app relations.  
 - `id`: Text
 - `type`: Text matching `LinkType.id`, type of relation. Below are already included with the app
@@ -113,15 +120,12 @@ In-app relations.
 - `updated`: DateTime, can be string repr or int
 
 
-### Tag references (since Mesh 1.0)
+### TagReference (since Mesh 1.0)
 Tag references are references to tags from any data type, supports worlds 
 - `id`: Text, the following are ids used by the system and are already included with the app
-- `tagId`: Text matching `Tag.id` for the tag we want to reference
-- `name`: Text, the name
-- `colorString`: Text, Color as a string (currently accepts ints)
-- `iconUrl` : Text, icon Url
+- `srcTagId`: Text matching `Tag.id`. For backups it will be the user's id, for public use "public"
+
 #### Optional
-- `description` : Text, can be markdown
 - `userId`: Text matching `User.id`. For backups it will be the user's id, for public use "public"
 - `created`: DateTime, can be string repr or int
 - `updated`: DateTime, can be string repr or int
@@ -130,10 +134,11 @@ Tag references are references to tags from any data type, supports worlds
 - `nodeTypeId`: Text matching `NodeType.id` if we want to tie the tag to a node type
 - `linkTypeId`: Text matching `LinkType.id` if we want to tie the tag to a link type
 - `worldId`: Text matching `World.id` if we want to tie the tag to a world
-
+- `created`: DateTime, can be string repr or int
+- `updated`: DateTime, can be string repr or int
 
 ## Layer -1 (architecture)
-### Node types
+### NodeType
 The types of which concepts/ideas can be made
 - `id`: Text
 - `name`: Text, the name
@@ -147,7 +152,7 @@ The types of which concepts/ideas can be made
 - `created`: DateTime, can be string repr or int
 - `updated`: DateTime, can be string repr or int
 
-### Link types
+### LinkType
 - `id`: Text
 - `name`: Text, the name
 - `sourceText`: Text on one side of the relation i.e. from A -> B what is "->"
@@ -165,7 +170,7 @@ The types of which concepts/ideas can be made
 - `created`: DateTime, can be string repr or int
 - `updated`: DateTime, can be string repr or int
 
-### Worlds (since IAI 4.1)
+### World (since IAI 4.1)
 Worlds are a way to split your library into distinct semantic worlds. 
 - `id`: Text
 - `name`: Text, the name
@@ -177,13 +182,14 @@ Worlds are a way to split your library into distinct semantic worlds.
 - `created`: DateTime, can be string repr or int
 - `updated`: DateTime, can be string repr or int
 
-### Tags (since Mesh 1.0) 
+### Tag (since Mesh 1.0) 
 Tags are tags, not a reference to tags on individual data but the tags that are referenced themselves 
 - `id`: Text, the following are ids used by the system and are already included with the app
 - `name`: Text, the name
 - `colorString`: Text, Color as a string (currently accepts ints)
 - `iconUrl` : Text, icon Url
 #### Optional
+- `subTitle`: Text, the subtitle (Mesh 1.1)
 - `description` : Text, can be markdown
 - `userId`: Text matching `User.id`. For backups it will be the user's id, for public use "public"
 - `created`: DateTime, can be string repr or int
@@ -191,7 +197,7 @@ Tags are tags, not a reference to tags on individual data but the tags that are 
 
 ## Level -2 (constraints)
 
-### Link Required Node Type
+### LinkRequiredNodeType
 Constraints on what node type can be on either side of a Link Type link
 - `id`: Text
 - `linkTypeId`: Text matching `LinkType.id` meaning the link type to which we apply the constraint
@@ -201,7 +207,7 @@ Constraints on what node type can be on either side of a Link Type link
 - `created`: DateTime, can be string repr or int
 - `updated`: DateTime, can be string repr or int
 
-### World Constraints (since Mesh 1.0)
+### WorldConstraint (since Mesh 1.0)
 World constraints help further narrow down your IAI experience by only showing meta data choices based on your selected worlds' constraints. 
 - `id`: Text
 - `worldId`: Text matching `World.id` meaning the world to which we apply the constraint
