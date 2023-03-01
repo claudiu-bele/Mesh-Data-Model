@@ -9,9 +9,10 @@ This concerns the user data structure of Mesh, the underlying logic system of th
    - [Mesh 1.1](#mesh-1.1)
    - [Mesh 1.0](#mesh-1.1)
    - [Pre-Mesh](#ImmaterialAI-data-model)
-- [Mesh implementations(#mesh-implementations)
+- [Mesh implementations](#mesh-implementations)
    - [Clarity](#clarity)
    - [ImmaterialAI](#ImmaterialAI) 
+      - [ImmaterialAI classic](#ImmaterialAI-classic) 
 - [Contributing](#contributing)
 - [Database](#database
 
