@@ -15,7 +15,10 @@ This concerns the user data structure of Mesh, the underlying logic system of th
       - [ImmaterialAI classic](#ImmaterialAI-classic) 
 - [Contributing](#contributing)
 - [Database](#database)
-   - [latest](#latest)  
+   - [latest](#latest) 
+   - [Layer 0](#layer-0-ground-level) 
+      - [Node](#node)
+      - [Link](#link)
 
 
 ## Condensed update log
