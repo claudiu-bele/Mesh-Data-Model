@@ -6,9 +6,9 @@ This concerns the user data structure of Mesh, the underlying logic system of th
 
 # Table of contents
 - [Updates](#condensed-update-log)
-   - [Mesh 1.2](#mesh-1.1)
-   - [Mesh 1.1](#mesh-1.1)
-   - [Mesh 1.0](#mesh-1.1)
+   - [Mesh 1.2](#mesh-12)
+   - [Mesh 1.1](#mesh-11)
+   - [Mesh 1.0](#mesh-10)
    - [Pre-Mesh](#ImmaterialAI-data-model)
 - [Mesh implementations](#mesh-implementations)
    - [Clarity](#clarity)
