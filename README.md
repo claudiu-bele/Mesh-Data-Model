@@ -15,17 +15,16 @@ This concerns the user data structure of Mesh, the underlying logic system of th
       - [ImmaterialAI classic](#ImmaterialAI-classic) 
 - [Contributing](#contributing)
 - [Database](#database)
-   - [latest version - 43](#latest) 
-   - [Layer 0](#layer-0-ground-level) 
+   - [Data level](#layer-0-ground-level) 
      - [Node](#node)
      - [Link](#link)
      - [Tag reference](#tagreference-since-mesh-10)
-   - [Layer -1](#layer--1-architecture)
+   - [Meta data level](#layer--1-architecture)
      - [NodeType](#nodetype)
      - [LinkType](#linkType)
      - [World](#world-sine-iai-41)
      - [Tag](#tag-sine-mesh-10)
-  - [Level -2](#level--2-constraints)
+  - [Constraints level](#level--2-constraints)
      - [LinkRequiredNodeType](#LinkRequiredNodeType)
      - [WorldConstraint](#WorldConstraint-since-mesh-10)   
 
@@ -65,9 +64,7 @@ This concerns the user data structure of Mesh, the underlying logic system of th
 If you want to contribute your own databases of concepts to this repository, open a pull request and we'll look at it.
 
 # Database 
-
-##### latest
-*latest version is 43*
+#### *Latest database version is 43*
 
 In this version [here](https://raw.githubusercontent.com/claudiu-bele/Mesh-Data-Model/master/neoplatonism_template.cdb) all `.mesh` data are written in JSON, both backups and public files/libraries having the same structure.
 
