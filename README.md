@@ -47,7 +47,7 @@ This concerns the user data structure of Mesh, the underlying logic system of th
 - database version 1 - 32
 - Contains users nodes, links (+ types), worlds and preferences, 
 
-[back to top](#)
+[*back to top*](#)
 
 ## Mesh implementations
 
@@ -67,9 +67,13 @@ This concerns the user data structure of Mesh, the underlying logic system of th
    - native Android
    - development halted, focused changed to 3.X Cross-Platform version
    - supports `.cdb` files
+
+[*back to top*](#)
    
 ## Contributing
 If you want to contribute your own databases of concepts to this repository, open a pull request and we'll look at it.
+
+[*back to top*](#)
 
 # Database 
 #### *Latest database version is 43*
@@ -118,6 +122,9 @@ Nodes are in-app concepts.
 - `updated`: DateTime, can be string repr or int
 - `worldID (since 4.1)`: Text matching `World.id`
 
+[*back to top*](#)
+
+
 ### Link
 In-app relations.  
 - `id`: Text
@@ -143,6 +150,7 @@ In-app relations.
 - `created`: DateTime, can be string repr or int
 - `updated`: DateTime, can be string repr or int
 
+[*back to top*](#)
 
 ### TagReference (since Mesh 1.0)
 Tag references are references to tags from any data type, supports worlds 
@@ -161,6 +169,9 @@ Tag references are references to tags from any data type, supports worlds
 - `created`: DateTime, can be string repr or int
 - `updated`: DateTime, can be string repr or int
 
+[*back to top*](#)
+
+
 ### DataInfo (since Mesh 1.2)
 Used for tracking additions, updates and deletions of Node, NodeType, Link, LinkType, World and Tag
 - `id`: Text
@@ -172,6 +183,8 @@ Used for tracking additions, updates and deletions of Node, NodeType, Link, Link
 ##### Optional
 - `userId`: Text matching `User.id`. For backups it will be the user's id, for public use "public"
 - `created`: DateTime, can be string repr or int
+
+[*back to top*](#)
 
 
 ## Layer -1 (architecture)
@@ -188,6 +201,9 @@ The types of which concepts/ideas can be made
 - `userId`: Text matching `User.id`. For backups it will be the user's id, for public use "public"
 - `created`: DateTime, can be string repr or int
 - `updated`: DateTime, can be string repr or int
+
+[*back to top*](#)
+
 
 ### LinkType
 - `id`: Text
@@ -207,6 +223,9 @@ The types of which concepts/ideas can be made
 - `created`: DateTime, can be string repr or int
 - `updated`: DateTime, can be string repr or int
 
+[*back to top*](#)
+
+
 ### World (since IAI 4.1)
 Worlds are a way to split your library into distinct semantic worlds. 
 - `id`: Text
@@ -218,6 +237,9 @@ Worlds are a way to split your library into distinct semantic worlds.
 - `userId`: Text matching `User.id`. For backups it will be the user's id, for public use "public"
 - `created`: DateTime, can be string repr or int
 - `updated`: DateTime, can be string repr or int
+
+[*back to top*](#)
+
 
 ### Tag (since Mesh 1.0) 
 Tags are tags, not a reference to tags on individual data but the tags that are referenced themselves 
@@ -232,6 +254,9 @@ Tags are tags, not a reference to tags on individual data but the tags that are 
 - `created`: DateTime, can be string repr or int
 - `updated`: DateTime, can be string repr or int
 
+[*back to top*](#)
+
+
 ## Level -2 (constraints)
 
 ### LinkRequiredNodeType
@@ -243,6 +268,9 @@ Constraints on what node type can be on either side of a Link Type link
 - `userId`: Text matching `User.id`. For backups it will be the user's id, for public use "public"
 - `created`: DateTime, can be string repr or int
 - `updated`: DateTime, can be string repr or int
+
+[*back to top*](#)
+
 
 ### WorldConstraint (since Mesh 1.0)
 World constraints help further narrow down your IAI experience by only showing meta data choices based on your selected worlds' constraints. 
@@ -259,3 +287,5 @@ World constraints help further narrow down your IAI experience by only showing m
 In the app, certain relations enforce rules as to what the type of the concepts they are connected to can be. 
 Like `effect_parent`, which shows up in certain concepts as "Parent effect", and effects are the only type of item you can choose there. With that said,
 those rules are not enforced when importing data, so you can write relations here that would be impossible in the app.
+
+[*back to top*](#)
