@@ -14,7 +14,8 @@ This concerns the user data structure of Mesh, the underlying logic system of th
    - [ImmaterialAI](#ImmaterialAI) 
       - [ImmaterialAI classic](#ImmaterialAI-classic) 
 - [Contributing](#contributing)
-- [Database](#database
+- [Database](#database)
+   - [latest](#latest)  
 
 
 ## Condensed update log
