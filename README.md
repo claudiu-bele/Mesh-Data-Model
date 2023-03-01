@@ -6,6 +6,7 @@ This concerns the user data structure of Mesh, the underlying logic system of th
 
 # Table of contents
 - [Updates](#condensed-update-log)
+   - [Mesh 1.2](#mesh-1.1)
    - [Mesh 1.1](#mesh-1.1)
    - [Mesh 1.0](#mesh-1.1)
    - [Pre-Mesh](#ImmaterialAI-data-model)
@@ -19,6 +20,8 @@ This concerns the user data structure of Mesh, the underlying logic system of th
      - [Node](#node)
      - [Link](#link)
      - [Tag reference](#tagreference-since-mesh-10)
+     - [Data info](#datainfo-since-mesh-12)
+
    - [Meta data level](#layer--1-architecture)
      - [NodeType](#nodetype)
      - [LinkType](#linkType)
@@ -30,6 +33,9 @@ This concerns the user data structure of Mesh, the underlying logic system of th
 
 
 ## Condensed update log
+### Mesh 1.2
+- database version 45
+- DataInfo added for tracking chages
 ### Mesh 1.1
 - database version 43
 - TagReference gets tagId, Tag shortened
@@ -152,6 +158,19 @@ Tag references are references to tags from any data type, supports worlds
 - `worldId`: Text matching `World.id` if we want to tie the tag to a world
 - `created`: DateTime, can be string repr or int
 - `updated`: DateTime, can be string repr or int
+
+### DataInfo (since Mesh 1.2)
+Used for tracking additions, updates and deletions of Node, NodeType, Link, LinkType, World and Tag
+- `id`: Text
+- `status`: Text, can be `added`, `updated` or `deleted`
+- `dataType` : Text, can be `node`, `nodeType`, `link`, `linkType`, `world` or `tag`
+- `dataId` : Text matching id of any of the types mentioned above
+- `description`: Long-form text
+- `colorString`: Text, Color as a string (currently accepts ints)
+##### Optional
+- `userId`: Text matching `User.id`. For backups it will be the user's id, for public use "public"
+- `created`: DateTime, can be string repr or int
+
 
 ## Layer -1 (architecture)
 ### NodeType
