@@ -15,16 +15,25 @@ This concerns the user data structure of Mesh, the underlying logic system of th
       - [ImmaterialAI classic](#ImmaterialAI-classic) 
 - [Contributing](#contributing)
 - [Database](#database)
-   - [latest](#latest) 
+   - [latest version - 43](#latest) 
    - [Layer 0](#layer-0-ground-level) 
-      - [Node](#node)
-      - [Link](#link)
+     - [Node](#node)
+     - [Link](#link)
+     - [Tag reference](#tagreference-since-mesh-10)
+   - [Layer -1](#layer--1-architecture)
+     - [NodeType](#nodetype)
+     - [LinkType](#linkType)
+     - [World](#world-sine-iai-41)
+     - [Tag](#tag-sine-mesh-10)
+  - [Level -2](#level--2-constraints)
+     - [LinkRequiredNodeType](#LinkRequiredNodeType)
+     - [WorldConstraint](#WorldConstraint-since-mesh-10)   
 
 
 ## Condensed update log
 ### Mesh 1.1
-- coming soon
-- database version 38
+- database version 43
+- TagReference gets tagId, Tag shortened
 ### Mesh 1.0
 - database version 35
 - Node types get parentId, WorldConstraints table, Tag, TagReference
