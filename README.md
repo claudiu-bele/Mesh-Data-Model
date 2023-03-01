@@ -47,6 +47,8 @@ This concerns the user data structure of Mesh, the underlying logic system of th
 - database version 1 - 32
 - Contains users nodes, links (+ types), worlds and preferences, 
 
+[back to top](#)
+
 ## Mesh implementations
 
 ### Clarity
