@@ -5,10 +5,15 @@
 This concerns the user data structure of Mesh, the underlying logic system of the [live](https://immaterialAI.com) ImmaterialAI app.
 
 # Table of contents
-1. [update log](#condensed_update_log)
-2. [Mesh implementations(#mesh_implementations)
-3. [Contributing](#contributing)
-4. 
+- [Updates](#condensed-update-log)
+   - [Mesh 1.1](#mesh-1.1)
+   - [Mesh 1.0](#mesh-1.1)
+   - [Pre-Mesh](#ImmaterialAI-data-model)
+- [Mesh implementations(#mesh-implementations)
+   - [Clarity](#clarity)
+   - [ImmaterialAI](#ImmaterialAI) 
+- [Contributing](#contributing)
+- [Database](#database
 
 
 ## Condensed update log
@@ -19,7 +24,7 @@ This concerns the user data structure of Mesh, the underlying logic system of th
 - database version 35
 - Node types get parentId, WorldConstraints table, Tag, TagReference
 - +backup support for all new changes
-### ImmaterialAI 1.X - 4.9 data model
+### ImmaterialAI data model
 - database version 1 - 32
 - Contains users nodes, links (+ types), worlds and preferences, 
 
