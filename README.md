@@ -6,14 +6,15 @@ This concerns the user data structure of Mesh, the underlying logic system of th
 
 # Table of contents
 - [Updates](#condensed-update-log)
+  - [Mesh 1.3](#mesh-13)
   - [Mesh 1.2](#mesh-12)
   - [Mesh 1.1](#mesh-11)
   - [Mesh 1.0](#mesh-10)
-  - [Pre-Mesh](#ImmaterialAI-data-model)
+  - [Pre-Mesh](#immaterialai-data-model)
 - [Mesh implementations](#mesh-implementations)
   - [Clarity](#clarity)
-  - [ImmaterialAI](#ImmaterialAI)
-  - [ImmaterialAI classic](#ImmaterialAI-classic)
+  - [ImmaterialAI](#immaterialai)
+  - [ImmaterialAI classic](#immaterialai-classic)
 - [Contributing](#contributing)
 - [Database](#database)
   - [Data level](#layer-0-ground-level)
@@ -32,6 +33,9 @@ This concerns the user data structure of Mesh, the underlying logic system of th
 
 
 ## Condensed update log
+### Mesh 1.3
+- database version 50
+- Tracking AI chat sessions as nodes of type `internal_ai_chat_session`
 ### Mesh 1.2
 - database version 45
 - DataInfo added for tracking chages
@@ -110,13 +114,14 @@ Nodes are in-app concepts.
   - `item_source` for entities
   - `internal_system` for system
   - `internal_journey` for data tied to the user journey
+  - `internal_ai_chat_session` (since Mesh 1.3) for AI chat sessions
 - `name`: Text, the name
 #### Optional
 - 'link' : Text, URL
 - `subTitle`: Text, subtitle
 - `description` : Text, can be markdown
 - `imageUrl` : Text, image Url
-- `link (since 3.28.1/3.3.1+)` : Text, link that can be easily accessed
+- `link (since IAI 3.28.1/3.3.1+)` : Text, link that can be easily accessed
 - `userId`: Text matching `User.id`. For backups it will be the user's id, for public use "public"
 - `created`: DateTime, can be string repr or int
 - `updated`: DateTime, can be string repr or int
