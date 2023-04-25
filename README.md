@@ -38,17 +38,18 @@ This concerns the user data structure of Mesh, the underlying logic system of th
 - Tracking AI chat sessions as nodes of type `internal_ai_chat_session`
 ### Mesh 1.2
 - database version 45
-- DataInfo added for tracking chages
+- `DataInfo` added for tracking chages
 ### Mesh 1.1
 - database version 43
-- TagReference gets tagId, Tag shortened
+- `TagReference` gets `tagId`, `Tag` shortened
 ### Mesh 1.0
 - database version 35
-- Node types get parentId, WorldConstraints table, Tag, TagReference
-- +backup support for all new changes
+- `NodeType` gets parentId, 
+- `WorldConstraints` + `Tag` + `TagReference` tables
+- backup support for all new changes
 ### ImmaterialAI data model
 - database version 1 - 32
-- Contains users nodes, links (+ types), worlds and preferences,
+- Contains `User`, `Node`, `Link` (+ types), `World` and `Preference` instances,
 
 [*back to top*](#table-of-contents)
 
@@ -79,16 +80,16 @@ If you want to contribute your own databases of concepts to this repository, ope
 [*back to top*](#table-of-contents)
 
 # Database
-#### *Latest database version is 43*
+#### *Latest database version is 50*
 
 In this version [here](https://raw.githubusercontent.com/claudiu-bele/Mesh-Data-Model/master/neoplatonism_template.cdb) all `.mesh` data are written in JSON, both backups and public files/libraries having the same structure.
 
-The file must be a JSON object, optionally containing arrays of objects
-- from IAI 3 - 4.9: `users`, `nodes`, `links`, `nodeTypes`, `linkTypes`, `preferences`, `worlds`, `linkTypeNodeReqs`, `worlds`, `worldConstraints`,
-- from Mesh 1.0 `tags`, `tagInstances`
-- from Mesh 1.2 `dataInfos`
+The file must be a JSON object, optionally containing the following arrays of objects:
+- since Mesh 1.2: array `dataInfos`
+- since Mesh 1.0: arrays `tags`, `tagInstances`
+- from IAI 3 - 4.9: arrays `users`, `nodes`, `links`, `nodeTypes`, `linkTypes`, `preferences`, `worlds`, `linkTypeNodeReqs`, `worlds`, `worldConstraints`
 
-The only mandatory field is `dbVersion`, the value of the database version as text, in this case "38".
+The only mandatory field is `dbVersion`, the value of the database version as text, in this case "50".
 
 [*back to top*](#table-of-contents)
 
@@ -125,7 +126,7 @@ Nodes are in-app concepts.
 - `userId`: Text matching `User.id`. For backups it will be the user's id, for public use "public"
 - `created`: DateTime, can be string repr or int
 - `updated`: DateTime, can be string repr or int
-- `worldID (since 4.1)`: Text matching `World.id`
+- `worldId` (since 4.1)`: Text matching `World.id`
 
 [*back to top*](#table-of-contents)
 
