@@ -93,10 +93,12 @@ The file must be a JSON object, optionally containing the following arrays of ob
 
 The only mandatory field is `dbVersion`, the value of the database version as text, in this case "50".
 
+[*back to top*](#table-of-contents)
+
 #### Time
 
 Time can be described in two ways:
-- (number, preferred) milliseconds since 1970 (int)
+- (number, preferred) milliseconds since 1970
 - (text, deprecated) formatted compliant with .cdb files, e.g. "Oct 24, 2020 1:09:31 PM"
 
 [*back to top*](#table-of-contents)
