@@ -17,6 +17,8 @@ This concerns the user data structure of Mesh, the underlying logic system of th
   - [ImmaterialAI classic](#immaterialai-classic)
 - [Contributing](#contributing)
 - [Database](#database)
+  - [Latest database version](#latest-database-version)
+  - [Time](#time)  
   - [Data level](#layer-0-ground-level)
     - [Node](#node)
     - [Link](#link)
@@ -80,7 +82,7 @@ If you want to contribute your own databases of concepts to this repository, ope
 [*back to top*](#table-of-contents)
 
 # Database
-#### *Latest database version is 50*
+#### *Latest database version*
 
 In this version [here](https://raw.githubusercontent.com/claudiu-bele/Mesh-Data-Model/master/neoplatonism_template.cdb) all `.mesh` data are written in JSON, both backups and public files/libraries having the same structure.
 
@@ -90,6 +92,12 @@ The file must be a JSON object, optionally containing the following arrays of ob
 - from IAI 3 - 4.9: arrays `users`, `nodes`, `links`, `nodeTypes`, `linkTypes`, `preferences`, `worlds`, `linkTypeNodeReqs`, `worlds`, `worldConstraints`
 
 The only mandatory field is `dbVersion`, the value of the database version as text, in this case "50".
+
+#### Time
+
+Time can be described in two ways:
+- (number, preferred) milliseconds since 1970 (int)
+- (text, deprecated) formatted compliant with .cdb files, e.g. "Oct 24, 2020 1:09:31 PM"
 
 [*back to top*](#table-of-contents)
 
