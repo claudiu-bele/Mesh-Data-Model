@@ -151,11 +151,11 @@ In-app relations.
   - `is` for hard equivalence
   - `analog` for softer equivalence, potentially across mutually-exclusive systems
   - `parallel` for parallels, apply your own semantic distinction factors
-  - `related` for related
   - `favorite` for favorite/starred
   - `focus` for focus
   - `old_me` for new/old me distinctions
   - `todo` for task management
+  - `related` for general relatedness when all other existing types don't fit
 - `nodeId`: Text matching `Node.id`, id of the node from which the relation starts
 - `userId`: Text matching `User.id`, for backups it will be the user's id, for public use "public"
 #### Optional
