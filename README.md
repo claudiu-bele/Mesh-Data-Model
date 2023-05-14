@@ -114,7 +114,6 @@ Nodes are in-app concepts.
 - `internal_dont_know` for "don't know"
 - `internal_everything` for "everything"
 - `type`: Text matching `NodeType.id`, represents the type of concept. Below are already included with the app
-  - `item_concept` for ideas
   - `item_system` for world views
   - `item_effect` for effects
   - `item_event` for events
@@ -126,6 +125,7 @@ Nodes are in-app concepts.
   - `internal_system` for system
   - `internal_journey` for data tied to the user journey
   - `internal_ai_chat_session` (since Mesh 1.3) for AI chat sessions
+  - `item_concept` for any other idea that doesn't fit existing data types, or to use when wanting to generalize a node and infer that it's an idea
 - `name`: Text, the name
 #### Optional
 - 'link' : Text, URL
