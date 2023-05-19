@@ -6,6 +6,7 @@ This concerns the user data structure of Mesh, the underlying logic system of th
 
 # Table of contents
 - [Updates](#condensed-update-log)
+  - [Mesh 1.4](#mesh-14)
   - [Mesh 1.3](#mesh-13)
   - [Mesh 1.2](#mesh-12)
   - [Mesh 1.1](#mesh-11)
@@ -35,6 +36,9 @@ This concerns the user data structure of Mesh, the underlying logic system of th
 
 
 ## Condensed update log
+### Mesh 1.4
+- database version 52
+- `Node` supports file, imageUrl
 ### Mesh 1.3
 - database version 50
 - Tracking AI chat sessions as nodes of type `internal_ai_chat_session`
@@ -91,7 +95,7 @@ The file must be a JSON object, optionally containing the following arrays of ob
 - since Mesh 1.0: arrays `tags`, `tagInstances`
 - from IAI 3 - 4.9: arrays `users`, `nodes`, `links`, `nodeTypes`, `linkTypes`, `preferences`, `worlds`, `linkTypeNodeReqs`, `worlds`, `worldConstraints`
 
-The only mandatory field is `dbVersion`, the value of the database version as text, in this case "50".
+The only mandatory field is `dbVersion`, the value of the database version as text, in this case "52".
 
 [*back to top*](#table-of-contents)
 
