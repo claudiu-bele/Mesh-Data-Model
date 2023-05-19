@@ -39,6 +39,7 @@ This concerns the user data structure of Mesh, the underlying logic system of th
 ### Mesh 1.4
 - database version 52
 - `Node` supports file, imageUrl
+- new default `Node` and `Link` types
 ### Mesh 1.3
 - database version 50
 - Tracking AI chat sessions as nodes of type `internal_ai_chat_session`
@@ -118,6 +119,7 @@ Nodes are in-app concepts.
 - `internal_dont_know` for "don't know"
 - `internal_everything` for "everything"
 - `type`: Text matching `NodeType.id`, represents the type of concept. Below are already included with the app
+  - `item_state` for states (since Mesh 1.4) 
   - `item_system` for world views
   - `item_effect` for effects
   - `item_event` for events
@@ -125,7 +127,9 @@ Nodes are in-app concepts.
   - `item_feeling` for feelings
   - `item_quote` for quotes
   - `item_study` for studies
-  - `item_source` for entities
+  - `item_source` for entities  
+  - `item_process` for processes (since Mesh 1.4)   
+  - `item_location` for locations (since Mesh 1.4) 
   - `internal_system` for system
   - `internal_journey` for data tied to the user journey
   - `internal_ai_chat_session` (since Mesh 1.3) for AI chat sessions
@@ -160,6 +164,7 @@ In-app relations.
   - `old_me` for new/old me distinctions
   - `todo` for task management
   - `related` for general relatedness when all other existing types don't fit
+  - `at_location` for connecting any node to `item_location` node
 - `nodeId`: Text matching `Node.id`, id of the node from which the relation starts
 - `userId`: Text matching `User.id`, for backups it will be the user's id, for public use "public"
 #### Optional
