@@ -93,7 +93,7 @@ In this version [here](https://raw.githubusercontent.com/claudiu-bele/Mesh-Data-
 
 The file must be a JSON object, optionally containing the following arrays of objects:
 - since Mesh 1.2: array `dataInfos`
-- since Mesh 1.0: arrays `tags`, `tagInstances`
+- since Mesh 1.0: arrays `tags`, `tagInstances`, `worldConstraints`
 - from IAI 3 - 4.9: arrays `users`, `nodes`, `links`, `nodeTypes`, `linkTypes`, `preferences`, `worlds`, `linkTypeNodeReqs`, `worlds`, `worldConstraints`
 
 The only mandatory field is `dbVersion`, the value of the database version as text, in this case "52".
