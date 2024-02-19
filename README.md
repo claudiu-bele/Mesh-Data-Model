@@ -152,7 +152,8 @@ Nodes are in-app concepts.
 - `userId`: Text matching `User.id`. For backups it will be the user's id, for public use "public"
 - `created`: DateTime, can be string repr or int
 - `updated`: DateTime, can be string repr or int
-- `worldId` (since 4.1)`: Text matching `World.id`
+- `worldId` (since 4.1): Text matching `World.id`
+- `modelId` (since 5.30, Mesh 1.5): Text matching `Model.id`
 
 [*back to top*](#table-of-contents)
 
@@ -182,6 +183,7 @@ In-app relations.
 - `data` : Text, contextual data
 - `created`: DateTime, can be string repr or int
 - `updated`: DateTime, can be string repr or int
+- `modelId` (since 5.30, Mesh 1.5): Text matching `Model.id`
 
 [*back to top*](#table-of-contents)
 
