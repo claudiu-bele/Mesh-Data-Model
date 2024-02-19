@@ -6,6 +6,7 @@ This concerns the user data structure of Mesh, the underlying logic system of th
 
 # Table of contents
 - [Updates](#condensed-update-log)
+  - [Mesh 1.5](#mesh-15)
   - [Mesh 1.4](#mesh-14)
   - [Mesh 1.3](#mesh-13)
   - [Mesh 1.2](#mesh-12)
@@ -25,17 +26,23 @@ This concerns the user data structure of Mesh, the underlying logic system of th
     - [Link](#link)
     - [Tag reference](#tagreference-since-mesh-10)
     - [Data info](#datainfo-since-mesh-12)
+    - [Model reference](#modelreference-since-mesh-15)
   - [Meta data level](#layer--1-architecture)
     - [NodeType](#nodetype)
     - [LinkType](#linkType)
     - [World](#world-sine-iai-41)
     - [Tag](#tag-sine-mesh-10)
+    - [Model](#model-sine-mesh-15)
   - [Constraints level](#level--2-constraints)
     - [LinkRequiredNodeType](#LinkRequiredNodeType)
     - [WorldConstraint](#WorldConstraint-since-mesh-10)
 
 
 ## Condensed update log
+### Mesh 1.5
+- database version 53
+- `Model` and `ModelReference` 
+- `Node` and `Link` types get new property `modelId` to constrain them to only one `Model`
 ### Mesh 1.4
 - database version 52
 - `Node` supports file, imageUrl
@@ -87,16 +94,17 @@ If you want to contribute your own databases of concepts to this repository, ope
 [*back to top*](#table-of-contents)
 
 # Database
-#### *Latest database version*
+#### 53 (*Latest database version* )
 
 In this version [here](https://raw.githubusercontent.com/claudiu-bele/Mesh-Data-Model/master/neoplatonism_template.cdb) all `.mesh` data are written in JSON, both backups and public files/libraries having the same structure.
 
 The file must be a JSON object, optionally containing the following arrays of objects:
+- since Mesh 1.5: array `models`, `modelReferences`
 - since Mesh 1.2: array `dataInfos`
 - since Mesh 1.0: arrays `tags`, `tagInstances`, `worldConstraints`
 - from IAI 3 - 4.9: arrays `users`, `nodes`, `links`, `nodeTypes`, `linkTypes`, `preferences`, `worlds`, `linkTypeNodeReqs`, `worlds`, `worldConstraints`
 
-The only mandatory field is `dbVersion`, the value of the database version as text, in this case "52".
+The only mandatory field is `dbVersion`, the value of the database version as text, in this case "53".
 
 [*back to top*](#table-of-contents)
 
@@ -109,7 +117,7 @@ Time can be described in two ways:
 [*back to top*](#table-of-contents)
 
 
-## Layer 0 (ground level)
+# Layer 0 (ground level)
 ### User
 They are only relevant for backups. The Users array has no reason to not be empty in public files unless you want to author a bundle as coming from a specific source.
 ### Node
@@ -211,8 +219,13 @@ Used for tracking additions, updates and deletions of Node, NodeType, Link, Link
 
 [*back to top*](#table-of-contents)
 
+### ModelReference (since Mesh 1.5)
+*(more coming soon, not final)*
 
-## Layer -1 (architecture)
+[*back to top*](#table-of-contents)
+
+
+# Layer -1 (architecture)
 ### NodeType
 The types of which concepts/ideas can be made
 - `id`: Text
@@ -282,8 +295,13 @@ Tags are tags, not a reference to tags on individual data but the tags that are 
 [*back to top*](#table-of-contents)
 
 
-## Level -2 (constraints)
+### Model (since Mesh 1.5)
+*(more coming soon, not final)*
 
+[*back to top*](#table-of-contents)
+
+
+##Level -2 (constraints)
 ### LinkRequiredNodeType
 Constraints on what node type can be on either side of a Link Type link
 - `id`: Text
