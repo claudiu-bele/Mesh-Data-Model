@@ -42,7 +42,7 @@ This concerns the user data structure of Mesh, the underlying logic system of th
 ### Mesh 1.5
 - database version 53
 - `Model` and `ModelReference` 
-- `Node` and `Link` types get new property `modelId` to constrain them to only one `Model`
+- `Node` and `Link` types get new optional property `modelId` to constrain them to only one `Model`
 ### Mesh 1.4
 - database version 52
 - `Node` supports file, imageUrl
