@@ -301,7 +301,7 @@ Tags are tags, not a reference to tags on individual data but the tags that are 
 [*back to top*](#table-of-contents)
 
 
-##Level -2 (constraints)
+# Level -2 (constraints)
 ### LinkRequiredNodeType
 Constraints on what node type can be on either side of a Link Type link
 - `id`: Text
